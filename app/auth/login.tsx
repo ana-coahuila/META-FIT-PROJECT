@@ -20,7 +20,7 @@ const Login: React.FC = () => {
 
     try {
       // Configuración de la petición Axios
-      const response = await axios.post('http://192.168.1.12:8081/api/auth/login', {
+      const response = await axios.post('http://192.168.1.6:5000/api/auth/login', {
         email,
         password
       }, {
@@ -35,7 +35,7 @@ const Login: React.FC = () => {
         // await AsyncStorage.setItem('userToken', response.data.token);
         
         // Navegar al dashboard
-        router.push('/(tabs)/index');
+        router.push('/(tabs)/dashboard');
       } else {
         setError(response.data.message || 'Error en el inicio de sesión');
       }
